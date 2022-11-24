@@ -1,0 +1,10 @@
+{
+  "name": "food-macros",
+  "version": "1.0.0",
+  "description": "Application that contains a list of foods and their macro nutrients",
+  "main": "src/index.js",
+  "repository": "https://source.xing.com/miquel-dedomingo/food-macros",
+  "author": "Miquel de Domingo <miquel.dedomingo@xing.com>",
+  "license": "MIT",
+  "private": false
+}
