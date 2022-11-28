@@ -302,12 +302,12 @@ internal state, for simplicity:
 3. Inside this `FoodForm` component, add a handler named `handleOnSubmit`. This
    function has an argument named `e`, which is the `event` of the onSubmit.
 4. This function will do the following things:
-  1. First, call the `preventDefault()` method from the `event` that is received
-     as an argument. This ensures that the `form` does not refresh the page,
-     which is the default behaviour. That's the reason of the naming, to prevent
-     the form from executing its default behaviour.
-  2. Call the `onSubmit` property that the `FoodForm` component receives with
-     the values of the different inputs, which are stored in the state.
+    1. First, call the `preventDefault()` method from the `event` that is received
+       as an argument. This ensures that the `form` does not refresh the page,
+       which is the default behaviour. That's the reason of the naming, to prevent
+       the form from executing its default behaviour.
+    2. Call the `onSubmit` property that the `FoodForm` component receives with
+       the values of the different inputs, which are stored in the state.
 
 #### Receiving data in the parent component
 
@@ -350,16 +350,16 @@ Next step is to render the list of items.
 4. This component should have a prop named `food` which will be the food that it
    is supposed to render.
 5. The component should contain:
-  1. An `article` that will wrap the content.
-  2. A first container that will wrap the header.
-  3. Inside this first wrapper, add a `p` that will be the header and will
-     render the name of the food received from props.
-  4. Create a second container, also as a child of the `article` that will be
-     the food content.
-  5. In this second container add 4 childs that will act as wrappers aswell.
-  6. Each wrapper should hace a `p` to display `Grams`, `Carbs`, `Proteins` or
-     `Fats`. Also, each container should have a second `p` that will display the
-     actual value of the food.
+    1. An `article` that will wrap the content.
+    2. A first container that will wrap the header.
+    3. Inside this first wrapper, add a `p` that will be the header and will
+       render the name of the food received from props.
+    4. Create a second container, also as a child of the `article` that will be
+       the food content.
+    5. In this second container add 4 childs that will act as wrappers aswell.
+    6. Each wrapper should hace a `p` to display `Grams`, `Carbs`, `Proteins` or
+       `Fats`. Also, each container should have a second `p` that will display the
+       actual value of the food.
 6. Add the classes to all elements that are required so the application looks
    like the image one.
 
