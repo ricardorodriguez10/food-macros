@@ -64,11 +64,11 @@ The entry point to our application is the `index.js` file. As you can see, this
 file is mostly empty. We will create our first component, which will be the 
 entrypoint to our application and we will add a header to the application.
 
-1. Inside the `./src/pages` directory, create a new file named: `home.js`.
+1. Inside the `./src/pages` directory, there's a file named: `home.js`.
 2. Inside this file, create a component named: `Home`.
 3. As of now, this component will not have any logic. Return a `main` tag.
 4. Add a children to the `main` tag that is a `header` tag.
-5. This `header` tag, add a children that is an `h2` and has the text `Food
+5. This `header` tag, add a children that is an `h1` and has the text `Food
    macros`.
 6. Open the application (start it if you hadn't done it yet) and see that the
    the content is displayed.
@@ -106,26 +106,26 @@ styles will be added:
    have two children: a plain text (without any tag) and an `input` component
    (see the example below).
    1. For the first input, set the `label` text to: `Food name:`. To the `input`,
-      add the `name` property with `foodName`; add the `placeholder` property
-      with `Apple...`; add also the `id` property with `foodName` aswell.
+      add the `name` attribute with `foodName`; add the `placeholder` attribute
+      with `Apple...`; add also the `id` attribute with `foodName` aswell.
    2. For the second input, set the `label` text to: `Food grams:`. To the `input`,
-      add the `name` property with `foodGrams`; add the `placeholder` property
-      with `100`; add also the `id` property with `foodGrams` aswell.
+      add the `name` attribute with `foodGrams`; add the `placeholder` attribute
+      with `100`; add also the `id` attribute with `foodGrams` aswell.
    3. For the fourth input, set the `label` text to: `Food carbs:`. To the `input`,
-      add the `name` property with `foodCarbs`; add the `placeholder` property
-      with `100`; add also the `id` property with `foodCarbs` aswell.
+      add the `name` attribute with `foodCarbs`; add the `placeholder` attribute
+      with `100`; add also the `id` attribute with `foodCarbs` aswell.
    4. For the third input, set the `label` text to: `Food protein:`. To the `input`,
-      add the `name` property with `foodProt`; add the `placeholder` property
-      with `100`; add also the `id` property with `foodProt` aswell.
+      add the `name` attribute with `foodProt`; add the `placeholder` attribute
+      with `100`; add also the `id` attribute with `foodProt` aswell.
    5. For the fifth input, set the `label` text to: `Food fats:`. To the `input`,
-      add the `name` property with `foodFats`; add the `placeholder` property
-      with `100`; add also the `id` property with `foodFats` aswell.
+      add the `name` attribute with `foodFats`; add the `placeholder` attribute
+      with `100`; add also the `id` attribute with `foodFats` aswell.
 4. In previous image, inputs 2-3 and 4-5 are wrapped in a container. Add a `div`
    element that has both inputs 2-3 as children and a second `div` that does the
    same for the inputs 4-5. Make sure that your component tree looks as in the 
    following image.
 5. Since the second, third, fourth and fifth inputs will only accept a number,
-   pass the `type` property to the `input` with the `number` string as the value.
+   pass the `type` attribute to the `input` with the `number` string as the value.
 6. Finally, add a `button` as the last child of the `form`. Also, set the `type`
    prop of the `button` to `submit`. This will ensure that, when the `button` is
    clicked, the `onSubmit` method is called for the `form`. This is a common (and
@@ -203,15 +203,15 @@ At this point, the `Input` props have to also be refactored. The next step is
 to find out which are the properties that should be given by the parent
 component.
 
-1. Replace the text in the `label` and replace it by a property of the component
+1. Replace the text in the `label` and replace it by an attribute of the component
    named `labelText`.
-2. Replace the `name` and `id` prop in the `input` for a property in the
+2. Replace the `name` and `id` prop in the `input` for an attribute in the
    component named `name`.
-3. Replace the `placeholder` prop in the `input` for a property in the component
+3. Replace the `placeholder` prop in the `input` for an attribute in the component
    named `placeholder`.
-4. Replace the property `value` in the `input` for a property in the component
+4. Replace the attribute `value` in the `input` for an attribute in the component
    named `type`.
-5. The hard part, a property is needed that, if that property is said to `true`,
+5. The hard part, an attribute is needed that, if that attribute is said to `true`,
    the `label` will have the `half-input` class. Add a `half` prop that is
    responsible for accepting this value.
 
@@ -257,12 +257,12 @@ component.
    receive an event. Use this event to update the state of the form. You can
    use the properties `event.target.name` to identify the `input` and the
    `event.target.value` to get the written value.
-4. Add a new property to the `Input` component that is named `onChange`.
-5. Pass this `onChange` property to the `input`'s `onChange` inside the
+4. Add a new attribute to the `Input` component that is named `onChange`.
+5. Pass this `onChange` attribute to the `input`'s `onChange` inside the
    `Input` component.
-6. Now that the `Input` component accepts an `onChange` property which is
+6. Now that the `Input` component accepts an `onChange` attribute which is
    forwarded to the `input` component, pass the `handleOnInputChange` to this
-   new `onChange` property.
+   new `onChange` attribute.
 
 Try writting on the inputs and check if the state is updated accordingly.
 
@@ -273,7 +273,7 @@ meaning that the application will have the information required to create a
 food.  
 In the `FoodForm` component there's defined a `form` component with a child that
 is a `button`. This `button` allows the user to confirm their changes, which
-technically speaking, is: to submit the form. This `button` has the property
+technically speaking, is: to submit the form. This `button` has the attribute
 `type` set to `submit`. When a `button` with such type is located inside a
 `form`, it will trigger the `onSubmit` callback of the `form` input. 
 
@@ -285,7 +285,7 @@ More in depth, this is what happens:
    the inputs through a `useState`.
 2. Once the inputs have been filled, the user will submit the data through the
    button.
-3. By clicking this button, the `onSubmit` property, which is a callback, in the
+3. By clicking this button, the `onSubmit` attribute, which is a callback, in the
    `form` component will be called.
 
 #### Communication with parent
@@ -297,7 +297,7 @@ internal state, for simplicity:
 1. Add a prop to the `FoodForm` component named `onSubmit`. This argument will
    be a callback that will be called when the form is submitted with all the
    input data.
-2. Add the property `onSubmit` to the `form` in the `FoodForm` component and
+2. Add the attribute `onSubmit` to the `form` in the `FoodForm` component and
    pass a function named `handleOnSubmit` which will be defined in the next step.
 3. Inside this `FoodForm` component, add a handler named `handleOnSubmit`. This
    function has an argument named `e`, which is the `event` of the onSubmit.
@@ -306,7 +306,7 @@ internal state, for simplicity:
        as an argument. This ensures that the `form` does not refresh the page,
        which is the default behaviour. That's the reason of the naming, to prevent
        the form from executing its default behaviour.
-    2. Call the `onSubmit` property that the `FoodForm` component receives with
+    2. Call the `onSubmit` attribute that the `FoodForm` component receives with
        the values of the different inputs, which are stored in the state.
 
 #### Receiving data in the parent component
