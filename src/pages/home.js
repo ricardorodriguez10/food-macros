@@ -1,3 +1,8 @@
 import React from 'react';
+import FoodForm from '../components/food-form/food-form';
 
-export const Home = () => <h1>Hello World</h1>;
+export const Home = () => (
+  <main>
+    <FoodForm />
+  </main>
+);

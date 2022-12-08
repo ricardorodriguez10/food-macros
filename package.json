@@ -37,6 +37,10 @@
     "webpack-cli": "5.0.0",
     "webpack-dev-server": "4.11.1"
   },
+  "volta": {
+    "node": "16.10.0",
+    "yarn": "1.22.19"
+  },
   "license": "MIT",
   "private": false
 }
