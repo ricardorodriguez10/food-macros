@@ -2,18 +2,20 @@ import React, { useState } from 'react';
 import '../../global.css';
 import Input from '../input/input';
 
-const FoodForm = (onSubmit) => {
+const FoodForm = ({ onSubmit }) => {
   const [values, setValues] = useState({
     foodName: '',
     foodGrams: '',
     foodCarbs: '',
-    foodProt: '',
+    foodProtein: '',
     foodFats: '',
   });
 
   const handleOnInputChange = (event) => {
-    setValues(event.target.name);
-    setValues(event.target.value);
+    const { value, name } = event.target;
+    setValues((prevValues) => {
+      return { ...prevValues, [name]: [value] };
+    });
   };
 
   const handleOnSubmit = (e) => {
@@ -44,6 +46,7 @@ const FoodForm = (onSubmit) => {
           type="number"
           placeholder="100"
           id="foodGrams"
+          values={values.foodGrams}
           onChange={handleOnInputChange}
         />
         <Input
@@ -53,6 +56,7 @@ const FoodForm = (onSubmit) => {
           type="number"
           placeholder="50"
           id="foodCarbs"
+          values={values.foodCarbs}
           onChange={handleOnInputChange}
         />
       </div>
@@ -65,6 +69,7 @@ const FoodForm = (onSubmit) => {
           type="number"
           id="foodProtein"
           placeholder="50"
+          values={values.foodProtein}
           onChange={handleOnInputChange}
         />
         <Input
@@ -74,6 +79,7 @@ const FoodForm = (onSubmit) => {
           type="number"
           id="foodFats"
           placeholder="50"
+          values={values.foodFats}
           onChange={handleOnInputChange}
         />
       </div>

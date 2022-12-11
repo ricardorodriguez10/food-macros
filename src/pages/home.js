@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
 import FoodForm from '../components/food-form/food-form';
+import FoodItem from '../components/food-item/food-item';
 
 export const Home = () => {
   const [foodlist, setFoodList] = useState([]);
 
   const onSubmitFood = (inputData) => {
-    setFoodList((prevValues) => {
-      return [...prevValues, inputData];
-    });
+    setFoodList((prevValues) => [...prevValues, inputData]);
+    console.log(inputData);
   };
 
   return (
     <main>
-      <FoodForm onSubmit={onSubmitFood} />
+      <section>
+        <FoodForm onSubmit={onSubmitFood} />
+      </section>
+
+      <section>
+        <FoodItem />
+      </section>
     </main>
   );
 };

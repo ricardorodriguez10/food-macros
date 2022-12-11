@@ -10,7 +10,7 @@ const Input = ({
   half,
   onChange,
 }) => (
-  <label className={half ? 'half' : 'label'}>
+  <label className={half ? 'half' : 'label half'}>
     {labelText}
     <input
       className="input"
