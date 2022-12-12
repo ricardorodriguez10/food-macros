@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../global.css';
 
 const Input = ({
   labelText,
@@ -10,7 +9,7 @@ const Input = ({
   half,
   onChange,
 }) => (
-  <label className={half ? 'half' : 'label half'}>
+  <label className={half ? 'label half' : 'label'}>
     {labelText}
     <input
       className="input"

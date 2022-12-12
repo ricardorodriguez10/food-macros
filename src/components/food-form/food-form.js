@@ -14,7 +14,7 @@ const FoodForm = ({ onSubmit }) => {
   const handleOnInputChange = (event) => {
     const { value, name } = event.target;
     setValues((prevValues) => {
-      return { ...prevValues, [name]: [value] };
+      return { ...prevValues, [name]: value };
     });
   };
 
@@ -30,7 +30,6 @@ const FoodForm = ({ onSubmit }) => {
       </header>
       <Input
         labelText="Food name"
-        className="input"
         name="foodName"
         placeholder="Apple"
         id="foodName"
@@ -38,49 +37,49 @@ const FoodForm = ({ onSubmit }) => {
         onChange={handleOnInputChange}
       />
 
-      <div className="food-header-wrapper">
+      <div className="input-group-wrapper">
         <Input
           labelText="Food grams"
-          className="input"
           name="foodGrams"
           type="number"
           placeholder="100"
           id="foodGrams"
           values={values.foodGrams}
           onChange={handleOnInputChange}
+          half
         />
         <Input
           labelText="Food carbs"
-          className="input"
           name="foodCarbs"
           type="number"
           placeholder="50"
           id="foodCarbs"
           values={values.foodCarbs}
           onChange={handleOnInputChange}
+          half
         />
       </div>
 
-      <div className="food-header-wrapper">
+      <div className="input-group-wrapper">
         <Input
           labelText="Food protein"
-          className="input"
           name="foodProtein"
           type="number"
           id="foodProtein"
           placeholder="50"
           values={values.foodProtein}
           onChange={handleOnInputChange}
+          half
         />
         <Input
           labelText="Food fats"
-          className="input"
           name="foodFats"
           type="number"
           id="foodFats"
           placeholder="50"
           values={values.foodFats}
           onChange={handleOnInputChange}
+          half
         />
       </div>
       <button className="button" type="submit">

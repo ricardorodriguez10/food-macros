@@ -11,13 +11,15 @@ export const Home = () => {
   };
 
   return (
-    <main>
-      <section>
+    <main className="view-container">
+      <section className="section-container">
         <FoodForm onSubmit={onSubmitFood} />
       </section>
 
       <section>
-        <FoodItem />
+        {foodlist.map((food) => (
+          <FoodItem food={food} />
+        ))}
       </section>
     </main>
   );
