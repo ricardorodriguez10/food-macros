@@ -25,9 +25,6 @@ const FoodForm = ({ onSubmit }) => {
 
   return (
     <form onSubmit={handleOnSubmit}>
-      <header>
-        <h1>Food Macros</h1>
-      </header>
       <Input
         labelText="Food name"
         name="foodName"

@@ -7,11 +7,13 @@ export const Home = () => {
 
   const onSubmitFood = (inputData) => {
     setFoodList((prevValues) => [...prevValues, inputData]);
-    console.log(inputData);
   };
 
   return (
     <main className="view-container">
+      <header>
+        <h1>Food Macros</h1>
+      </header>
       <section className="section-container">
         <FoodForm onSubmit={onSubmitFood} />
       </section>
