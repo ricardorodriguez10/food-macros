@@ -9,6 +9,14 @@ export const Home = () => {
     setFoodList((prevValues) => [...prevValues, inputData]);
   };
 
+  const deleteFood = (idItem) => {
+    setFoodList((prevValues) => {
+      return prevValues.filter(({ index }) => {
+        return index !== idItem;
+      });
+    });
+  };
+
   return (
     <main className="view-container">
       <header>
@@ -19,8 +27,8 @@ export const Home = () => {
       </section>
 
       <section>
-        {foodlist.map((food) => (
-          <FoodItem food={food} />
+        {foodlist.map((food, index) => (
+          <FoodItem key={index} id={index} food={food} onDelete={deleteFood} />
         ))}
       </section>
     </main>
