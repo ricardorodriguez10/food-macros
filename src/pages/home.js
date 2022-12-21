@@ -6,7 +6,10 @@ export const Home = () => {
   const [foodlist, setFoodList] = useState([]);
 
   const onSubmitFood = (inputData) => {
-    setFoodList((prevValues) => [...prevValues, inputData]);
+    setFoodList((prevValues) => [
+      ...prevValues,
+      { ...inputData, index: prevValues.length + 1 },
+    ]);
   };
 
   const deleteFood = (idItem) => {
@@ -27,8 +30,8 @@ export const Home = () => {
       </section>
 
       <section>
-        {foodlist.map((food, index) => (
-          <FoodItem key={index} id={index} food={food} onDelete={deleteFood} />
+        {foodlist.map((food) => (
+          <FoodItem food={food} onDelete={deleteFood} />
         ))}
       </section>
     </main>

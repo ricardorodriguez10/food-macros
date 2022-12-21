@@ -2,7 +2,7 @@ import React from 'react';
 
 const FoodItem = ({ food, onDelete }) => {
   const handleClick = () => {
-    onDelete(food.id);
+    onDelete(food.index);
   };
 
   return (
